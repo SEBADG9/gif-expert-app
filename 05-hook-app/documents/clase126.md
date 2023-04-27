@@ -85,4 +85,66 @@ finalmente dada la teoria pasamos a la practica pero esta vez usamos el if terna
 
 ```
 
-Hasta el momento hicimos uso del isLoading, ahora haremos uso de la data, desafortundamente la data viene como un arreglo. 
+Hasta el momento hicimos uso del isLoading, ahora haremos uso de la data
+
+```js
+ <blockquote className='blockquote text-end'>
+
+      
+        <p className='mb-1'>{data.character }</p>
+        <footer className='blockquote-footer'>{data.name} </footer>
+
+
+      </blockquote>
+   
+
+
+```
+**mejorando la sintaxis**
+
+```js
+
+const {data, isLoading, hasError} = useFetch("https://rickandmortyapi.com/api/character/1");
+/// desestructuramos algo que viene de la data, el problema es que yo no puedo desestucturar, ni el status ni el name si es null. DA UN ERROR DE JAVASCRIPT. Pero si puedo desestructural de algo que tenga valor. Pero el status y el name tienen valor de undifined.
+// La sintaxis de abajo significa que si la data tiene un valor, entonces toma la data.
+// este simbolo (!!) es la doble negacion, se puede investigar un poco mas.
+const {status, name}= !!data && data;
+
+
+
+  return (
+   <>
+   <h1>BreakingBad Quotes</h1>
+      <hr />
+
+      {
+        isLoading
+        ? (
+          <div className='alert alert-info text-center' >
+          Loading...
+        </div>
+      )
+      :( 
+        <blockquote className='blockquote text-end'>
+
+      
+        <p className='mb-1'>{status }</p>
+        <footer className='blockquote-footer'>{name} </footer>
+
+
+      </blockquote>
+    
+  )
+      } 
+  
+   </>
+  )
+
+
+}
+
+
+
+
+
+```
