@@ -5,12 +5,12 @@ import { useCounter } from '../hooks/useCounter';
 
 export const MultipleCustomHooks = () => {
 
- const {data, isLoading, hasError} = useFetch("https://rickandmortyapi.com/api/character/${counter} ");
+ const {data, isLoading, hasError} = useFetch(`https://rickandmortyapi.com/api/character/${counter}`);
  //console.log({data})
  const {status, name}= !!data && data;
 
  const{counter, increment}= useCounter(1);
- // se que el incrementar va a cambiar el valor del counter
+ // se que el incrementar va a cambiar el valor del counter  
  // y cuando esto cambie va a volverse a redibujar
  // modifico el url, por backsticks, O CONCATENANDO
 
