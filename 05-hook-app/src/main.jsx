@@ -8,12 +8,19 @@ import ReactDOM from 'react-dom/client';
 //import { SimpleForm } from './02-useEffect/SimpleForm';
 
 //import { FormWithCustomHook } from './02-useEffect/FormWithCustomHook';
-import {MultipleCustomHooks} from "./03-examples/MultipleCustomHooks"
+//import {MultipleCustomHooks} from "./03-examples/MultipleCustomHooks"
 
 import './index.css'
+//import { FocusScreen } from './04-useRef/FocusScreen';
+//import { Layout } from './05-useLayOutUseEffect/Layout';
+//import { Memorize } from './06-memos/Memorize';
+//import { MemoHook } from './06-memos/MemoHook';
+//import { CallbackHook } from './06-memos/CallbackHook';
+//import "./08-useReducer/intro-reducer";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-    <MultipleCustomHooks />
-  // </React.StrictMode> 
-)
+import { TodoApp } from './08-useReducer/TodoApp';
+ ReactDOM.createRoot(document.getElementById('root')).render(
+//   // <React.StrictMode>
+     <TodoApp />
+//   // </React.StrictMode> 
+ )

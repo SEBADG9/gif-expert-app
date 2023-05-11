@@ -1,10 +1,8 @@
-import React from 'react'
-
 import {useFetch, useCounter} from "../hooks/";
-import { LoadingQuote, Quote } from './';
+import { LoadingQuote, Quote } from '../03-examples';
 
 
-export const MultipleCustomHooks = () => {
+export const Layout = () => {
 
 const{counter, increment}= useCounter(1);
  const {data, isLoading, hasError} = useFetch(`https://rickandmortyapi.com/api/character/${counter}`);
